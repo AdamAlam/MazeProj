@@ -5,7 +5,7 @@ import time
 import random
 screen_width = 100
 
-# To see the maze, visit https://drive.google.com/file/d/1K98vkqbeeqJedcoV2yes1Tpy59kTOxO3/view?usp=sharing
+# To see the maze, visit bit.ly/CS303EMaze
 
 # os.startfile("MapWGrid.png")
 
@@ -68,47 +68,65 @@ moveset_A = ["UR", "RD", "UR", "URD", "RD", "UR", "UD", "RD", "UR", "UD", "URD",
 moveset_B = ["RL", "UL", "DL", "RL", "L", "UL", "RD", "UL", "DL", "R", "RL", "R", "RL", "UR", "RDL", ]
 moveset_C = ["RL", "U", "RD", "UL", "RD", "D", "UL", "RD", "UR", "DL", "RL", "RL", "RL", "RL", "RL", "RL", ]
 moveset_D = ["URL", "UD", "UDL", "D", "URL", "UD", "UD", "RDL", "RL", "UR", "DL", "RL", "UL", "DL", "RL",]
-moveset_E = ["L", "UR", "UD", "RD", "RL", "UR", "URD", "UD", "LD", "RL", "UR", "ULD", "URD", "D", "RL"]
+moveset_E = ["L", "UR", "UD", "RD", "RL", "UR", "URD", "UD", "DL", "RL", "UR", "UDL", "URD", "D", "RL"]
 moveset_F = ["UR", "DL", "UR", "DL", "UL", "DL", "L", "UR", "UD", "DL", "L", "UR", "RDL", "UR", "DL" ]
-moveset_G = ["RL", "R", "RL", "UR", "UDL", "UD", "UD", "LD", "U", "U", "URD", "RDL", "L", "UL", "RD" ]
-moveset_H = ["L", "RL", "RL", "L", "UL", "UD", "RD", "UR", "UD", "UD", "LD", "RL", "UR", "UD", "UL"]
+moveset_G = ["RL", "R", "RL", "UR", "UDL", "UD", "UD", "DL", "U", "U", "URD", "RDL", "L", "UL", "RD" ]
+moveset_H = ["L", "RL", "RL", "L", "UL", "UD", "RD", "UR", "UD", "UD", "DL", "RL", "UR", "UD", "UL"]
 moveset_I = ["U", "RDL", "RL", "UR", "UD", "RD", "RL", "URL", "RD", "UR", "RD", "RL", "UL", "RD", "R" ]
-moveset_J = ["UR", "LD", "RL", "RL", "R", "RL", "RL", "L", "RL", "L", "URL", "LD", "UR", "DL", "RL"]
-moveset_K = ["URL", "UD", "LD", "RL", "URL", "LD", "UL", "RD", "UL", "RD", "L", "UR", "LD", "UR", "LD"]
-moveset_L = ["RL", "UR", "UR", "RD", "UL", "UD", "UD", "LD", "UR", "LD", "UR", "LD", "U", "ULD", "RD" ]
-moveset_M = ["UL", "LD", "UR", "UD", "RD", "UR", "URD", "RD", "URL", "UD", "DL", "U", "UDR", "RD", "RL" ]
-moveset_N = ["UR", "D", "UL", "RD", "RL", "RL", "RL", "L", "UL", "UD", "UD", "UD", "LD", "UL", "RLD" ]
-moveset_O = ["UL", "UD", "UD", "LD", "UL", "LD", "UL", "UD", "UD", "UD", "UD", "UD", "UD", "UD", "LD" ]
+moveset_J = ["UR", "DL", "RL", "RL", "R", "RL", "RL", "L", "RL", "L", "URL", "DL", "UR", "DL", "RL"]
+moveset_K = ["URL", "UD", "DL", "RL", "URL", "DL", "UL", "RD", "UL", "RD", "L", "UR", "DL", "UR", "DL"]
+moveset_L = ["RL", "UR", "UR", "RD", "UL", "UD", "UD", "DL", "UR", "DL", "UR", "DL", "U", "ULD", "RD" ]
+moveset_M = ["UL", "DL", "UR", "UD", "RD", "UR", "URD", "RD", "URL", "UD", "DL", "U", "UDR", "RD", "RL" ]
+moveset_N = ["UR", "D", "UL", "RD", "RL", "RL", "RL", "L", "UL", "UD", "UD", "UD", "DL", "UL", "RLD" ]
+moveset_O = ["UL", "UD", "UD", "DL", "UL", "DL", "UL", "UD", "UD", "UD", "UD", "UD", "UD", "UD", "DL" ]
 move_set = [moveset_A, moveset_B, moveset_C,
             moveset_D, moveset_E, moveset_F, moveset_G, moveset_H, moveset_I, moveset_J, moveset_K, moveset_L, moveset_M, moveset_N, moveset_O, ]
 
 # readOut("Hello, welcome to the haunted time maze!\nIn this game, you will be given a certain amount of time to complete the maze.\nEach move will deduct from your remaining time.\nAt random points along the maze, you will be presented with riddles.\nIf you answer a riddle incorrectly, some time will be deducted.\nIf you do not complete the maze in time, it is game over.\nIf you wish to solve the puzzle in the least number of moves, it will take 68 moves!\nGood Luck!\n")
 def rand_gen():
     return int(random.randint(1,6))
-time_rem = 0
-def start_screen():
-    global time_rem
-    readOut("Hello, what is your name?")
-    name = input("")
-    readOut("Hello "+ name + ", welcome to the haunted time maze!\nIn this game, you will be given a certain amount of time to complete the maze.\nEach move will deduct from your remaining time.\nAt random points along the maze, you will be presented with riddles.\nIf you answer a riddle incorrectly, some time will be deducted.\nIf you do not complete the maze in time, it is game over.\nIf you wish to solve the puzzle in the least number of moves, it will take 68 moves!\nGood Luck!\n")
-    readOut("What difficulty level would you like to experience?\nEasy, Medium or Hard?")
-    diff = input("Enter a difficulty. ")
-    if diff.upper() == "EASY":
-        time_rem = 250
-    elif diff.upper() == "MEDIUM":
-        time_rem = 200
-    elif diff.upper() == "HARD":
-        time_rem = 120
-start_screen()
 
-unsolved = True
-current_pos_let = "H"
-current_pos_num = "1"
+
+time_rem = ''
+def start_screen(): 
+    global time_rem
+    readOut("Hello, what is your name?\n")
+    name = input("")
+    # readOut("Hello "+ name + ", welcome to the haunted time maze!\nIn this game, you will be given a certain amount of time to complete the maze.\nEach move will deduct from your remaining time.\nAt random points along the maze, you will be presented with riddles.\nIf you answer a riddle incorrectly, some time will be deducted.\nIf you do not complete the maze in time, it is game over.\nIf you wish to solve the puzzle in the least number of moves, it will take 68 moves!\nGood Luck!\n")
+    readOut("To see the maze, visit bit.ly/CS303EMaze (Case Sensitive)\n")
+    readOut("What difficulty level would you like to experience?\nEasy, Medium or Hard?\n")
+    diff = input("Enter a difficulty.\n")
+    while diff.upper() != "EASY" and diff.upper() != "MEDIUM" and diff.upper() != "HARD":
+        readOut("Sorry, that is not a difficulty.\n")
+        readOut("What difficulty level would you like to experience?\nEasy, Medium or Hard?\n")
+        diff = input("Enter a difficulty.\n")
+    if diff.upper() == "EASY":
+        time_rem = 350
+    elif diff.upper() == "MEDIUM":
+        time_rem = 250
+    elif diff.upper() == "HARD":
+        time_rem = 180
+
+
+fail_choice = ''
+def failed_maze():
+    global fail_choice
+    readOut("What would you like to do?\n")
+    print("(R)etry")
+    print("(E)xit")
+    fail_choice = input("")
+    while fail_choice.upper() != "E" or fail_choice.upper() != "R":
+            readOut("Sorry that is not a choice.\n")
+            readOut("What would you like to do?\n")
+            print("(R)etry")
+            print("(E)xit")
+            fail_choice = input("")
+
 def maze():
     global time_rem
-    global current_pos_let
-    global current_pos_num
-    global unsolved
+    current_pos_let = "H"
+    current_pos_num = "1"
+    unsolved = True
     while unsolved:
         readOut("You have " + str(time_rem) + " months remaining.\n")
         readOut("Your current position is " + current_pos_let + current_pos_num+"\n")
@@ -170,6 +188,9 @@ def maze():
             rid_inp = input("")
             if rid_inp.upper() in riddle_A[rand_Rid].upper() or riddle_A[rand_Rid].upper() in rid_inp.upper():
                 readOut("You are correct, the fates ares are on your side.\n")
+                time_added = random.randint(2, 5)
+                time_rem = time_rem + time_added
+                readOut(str(time_added) + " months have been added to your journey.\n")
                 riddle_A.pop(rand_Rid)
                 riddle_Q.pop(rand_Rid)
             else:
@@ -179,6 +200,20 @@ def maze():
                 readOut(str(time_taken) + " months have been taken away from your journey.\n")
                 riddle_A.pop(rand_Rid)
                 riddle_Q.pop(rand_Rid)
-    
-maze()
+        if time_rem <= 0 and unsolved == True:
+            readOut("You have failed on your journey! Better luck next time.\n")
+            break
+
+
+
+
+while fail_choice.upper() == "R" or fail_choice.upper() != "E":
+    start_screen()
+    maze()
+if fail_choice.upper() == "E":
+    exit()
+
+
+
+
     
