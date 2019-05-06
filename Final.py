@@ -82,7 +82,6 @@ moveset_O = ["UL", "UD", "UD", "DL", "UL", "DL", "UL", "UD", "UD", "UD", "UD", "
 move_set = [moveset_A, moveset_B, moveset_C,
             moveset_D, moveset_E, moveset_F, moveset_G, moveset_H, moveset_I, moveset_J, moveset_K, moveset_L, moveset_M, moveset_N, moveset_O, ]
 
-readOut("Hello, welcome to the haunted time maze!\nIn this game, you will be given a certain amount of time to complete the maze.\nEach move will deduct from your remaining time.\nAt random points along the maze, you will be presented with riddles.\nIf you answer a riddle incorrectly, some time will be deducted.\nIf you do not complete the maze in time, it is game over.\nIf you wish to solve the puzzle in the least number of moves, it will take 68 moves!\nGood Luck!\n")
 def rand_gen():
     return int(random.randint(1,6))
 
@@ -92,7 +91,7 @@ def start_screen():
     global time_rem
     readOut("Hello, what is your name?\n")
     name = input("")
-    # readOut("Hello "+ name + ", welcome to the haunted time maze!\nIn this game, you will be given a certain amount of time to complete the maze.\nEach move will deduct from your remaining time.\nAt random points along the maze, you will be presented with riddles.\nIf you answer a riddle incorrectly, some time will be deducted.\nIf you do not complete the maze in time, it is game over.\nIf you wish to solve the puzzle in the least number of moves, it will take 68 moves!\nGood Luck!\n")
+    readOut("Hello "+ name + ", welcome to the haunted time maze!\nIn this game, you will be given a certain amount of time to complete the maze.\nEach move will deduct from your remaining time.\nAt random points along the maze, you will be presented with riddles.\nIf you answer a riddle incorrectly, some time will be deducted.\nIf you do not complete the maze in time, it is game over.\nIf you wish to solve the puzzle in the least number of moves, it will take 68 moves!\nGood Luck!\n")
     readOut("To see the maze, visit bit.ly/CS303EMaze (Case Sensitive)\n")
     readOut("What difficulty level would you like to experience?\nEasy, Medium or Hard?\n")
     diff = input("Enter a difficulty.\n")
